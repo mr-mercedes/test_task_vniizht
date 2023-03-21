@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body bgcolor="#009933">
+<center>
+<h1>Enter Expression:</h1>
+<form pl th:action="@{/calculator}" th:object="${operationModel}" method="POST" pos>
+    <input type="text" th:field="*{expression}"/>
+
+    <p>
+        <input type="submit" class="button" name="eval" value="="/>
+        <input type="submit" class="button" name="fibonacci" value="fib"/>
+        <input type="submit" class="button" name="factorial" value="!"/>
+        <input type="submit" class="button" name="sqrt" value=&#8730 />
+        <input type="submit" class="button" name="power" value="^2"/>
+    </p>
+
+
+    <h1>
+        <p th:text="'result: ' + ${result}"/>
+    </h1>
+</center>
+</form>
+</body>
+</html>
